@@ -53,6 +53,13 @@ const saveUserForm=(event)=>{
     event.preventDefault();
     const name= document.getElementById("name").value;
     const email= document.getElementById("email").value;
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address");
+        return;
+    }
+
     const password= document.getElementById("password").value;
     const dob= document.getElementById("dob").value;
 
